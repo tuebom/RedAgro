@@ -107,13 +107,14 @@ var app  = new Framework7({
             // Save new registration ID
             localStorage.setItem('RegId', data.registrationId);
             // Post registrationId to your app server as the value has changed
+            app.dialog.alert('RegId: '+ data.registrationId);
         }
 
       });
 
       push.on('notification', function(data) {
           
-          app.dialog.alert(data.message, data.title);
+        app.dialog.alert(data.message, data.title);
       });
     },     
   },
