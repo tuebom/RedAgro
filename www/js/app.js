@@ -86,7 +86,7 @@ var app  = new Framework7({
       $$('#my-login-screen [name="mbrid"]').val(localStorage.getItem('mbrid'));
       $$('#my-login-screen [name="nohp"]').val(localStorage.getItem('nohp'));
       
-      app.data.push = PushNotification.init({
+      this.data.push = PushNotification.init({
         "android": {
             "senderID": "857182253756" //"597497239727"
         },
@@ -98,7 +98,7 @@ var app  = new Framework7({
         "windows": {}
       });
 
-      var push = app.data.push;
+      var push = this.data.push;
 
       push.on('registration', function(data) {
 
