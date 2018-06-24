@@ -53,7 +53,7 @@
   <plugin name="cordova-plugin-inappbrowser" source="npm" />
   <!--<plugin name="cordova-plugin-media" spec="^6.3.0" />-->
   <plugin name="cordova-plugin-network-information" source="npm" />
-  <plugin name="cordova-plugin-splashscreen" source="npm" />
+  <!--<plugin name="cordova-plugin-splashscreen" source="npm" />-->
   <plugin name="cordova-plugin-vibration" source="npm" />
   
   <!--<icon src="img/icon/icon.png"/>-->
