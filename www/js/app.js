@@ -107,7 +107,7 @@ var app  = new Framework7({
             // Save new registration ID
             localStorage.setItem('RegId', data.registrationId);
             // Post registrationId to your app server as the value has changed
-            app.dialog.alert('RegId: '+ data.registrationId);
+            // app.dialog.alert('RegId: '+ data.registrationId);
         }
 
       });
@@ -154,17 +154,25 @@ swiper.autoplay.start();
 $$('#my-login-screen .login-button').on('click', function () {
   
   var mbrid = $$('#my-login-screen [name="mbrid"]').val();
-  var nohp = $$('#my-login-screen [name="nohp"]').val();
-  var pin = $$('#my-login-screen [name="pin"]').val();
-  
   if (mbrid == '') {
       app.dialog.alert('Masukkan ID member anda.', 'Login Member');
       return;
-  } else
-  if (nohp == '') {
+  }
+  
+  var nohpx = $$('#my-login-screen [name="nohp"]').val();
+  if (nohpx == '') {
       app.dialog.alert('Masukkan nomor handphone anda.', 'Login Member');
       return;
-  } else
+  }
+
+  var rgx_nohp = /[08][0-9]{9,}/;
+  var nohp = nohpx.trim().match(rgx_nohp);
+  if (!nohp) {
+      app.dialog.alert('Input data nomor handphone belum benar.', 'Login Member');
+      return;
+  }
+
+  var pin = $$('#my-login-screen [name="pin"]').val();
   if (pin == '') {
       app.dialog.alert('Masukkan nomor PIN anda.', 'Login Member');
       return;
@@ -252,16 +260,16 @@ $$('#my-reg-screen .register-button').on('click', function () {
     return;
   }
 
-  var nohp = $$('#my-reg-screen [name="nohp"]').val();
-  if (nohp == '') {
+  var nohpx = $$('#my-reg-screen [name="nohp"]').val();
+  if (nohpx == '') {
       app.dialog.alert('Masukkan nomor handphone.', 'Registrasi Member');
       return;
   }
 
   var rgx_nohp = /[08][0-9]{9,}/;
-  var nohpx = nohp.trim().match(rgx_nohp);
-  if (!nohpx) {
-    app.dialog.alert('Input data nomor hp belum benar.', 'Registrasi Member');
+  var nohp = nohpx.trim().match(rgx_nohp);
+  if (!nohp) {
+    app.dialog.alert('Input data nomor handphone belum benar.', 'Registrasi Member');
     return;
   }
 
@@ -323,12 +331,8 @@ $$('a.label-login').on('click', function () {
 
 $$('#my-login-screen').on('loginscreen:opened', function (e, loginScreen) {
   // set data ke form login
-      // app.data.mbrid = localStorage.getItem('mbrid');
-      // app.data.nohp = localStorage.getItem('nohp');
   $$('#my-login-screen [name="mbrid"]').val(localStorage.getItem('mbrid'));
   $$('#my-login-screen [name="nohp"]').val(localStorage.getItem('nohp'));
-  // $$('#my-login-screen [name="mbrid"]').val(app.data.mbrid);
-  // $$('#my-login-screen [name="nohp"]').val(app.data.nohp);
 });
 
 $$('#tukar-poin .btnTukar').on('click', function(e){
@@ -510,17 +514,17 @@ $$(document).on('click', '.input-remove-row', function(){
     
 app.on('pageInit', function (page) {
 
-$$('input').on('focus', function () {
-  
-  $$('.kb').css('height', '280px');
-  //var limit = $$(window).height() - 280;
+  $$('input').on('focus', function () {
+    
+    $$('.kb').css('height', '280px');
+    //var limit = $$(window).height() - 280;
 
-  if ($$(this).offset().top > 280) {
-    $$('.page-content').scrollTop($$(this).offset().top-168);
-  }
-});
+    if ($$(this).offset().top > 280) {
+      $$('.page-content').scrollTop($$(this).offset().top-168);
+    }
+  });
 
-$$('input').on('blur', function () {
-  $$('.kb').css('height', '0px');
-});
+  $$('input').on('blur', function () {
+    $$('.kb').css('height', '0px');
+  });
 });

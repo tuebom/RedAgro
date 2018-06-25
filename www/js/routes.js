@@ -68,10 +68,11 @@ routes = [
 
         $$('.contact').on('click', function(e){
      
+          // app.dialog.alert('Masukkan data nomor hp tujuan.', 'Pulsa HP');
           navigator.contacts.pickContact(function(contact){
               //console.log('The following contact has been selected:' + JSON.stringify(contact));
-              var nomor = contact.phoneNumbers[0].value.replace('+62', '0');
-              $$('#tujuan').val(nomor);
+              var nomor = contact.phoneNumbers[0].value;
+              $$('#tujuan').val(nomor.replace('+62', '0'));
               var str = $$('#tujuan').val().substring(0, 4);
               updateList(str);
           },function(err){
@@ -938,7 +939,7 @@ routes = [
           var rgx_nohp = /[08][0-9]{9,}/;
           var nohpx = nohp.trim().match(rgx_nohp);
           if (!nohpx) {
-            app.dialog.alert('Input data nomor hp belum benar.', 'Pendaftaran Member');
+            app.dialog.alert('Input data nomor handphone belum benar.', 'Pendaftaran Member');
             return;
           }
         
