@@ -107,7 +107,7 @@ var app  = new Framework7({
             // Save new registration ID
             localStorage.setItem('RegId', data.registrationId);
             // Post registrationId to your app server as the value has changed
-            app.dialog.alert('Registrasi Id berhasil!');
+            // app.dialog.alert('Registrasi Id berhasil!');
         }
 
       });
