@@ -114,7 +114,7 @@ var app  = new Framework7({
 
       push.on('notification', function(data) {
           
-        app.dialog.alert(data.message, data.title);
+        app.dialog.alert(data.message, 'RedAgro');
       });
     },     
   },

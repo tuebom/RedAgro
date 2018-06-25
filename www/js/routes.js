@@ -68,10 +68,8 @@ routes = [
 
         $$('.contact').on('click', function(e){
      
-          // app.dialog.alert('Masukkan data nomor hp tujuan.', 'Pulsa HP');
           navigator.contacts.pickContact(function(contact){
               //console.log('The following contact has been selected:' + JSON.stringify(contact));
-              // var nomor = contact.phoneNumbers[0].value;
               $$('#tujuan').val(contact.phoneNumbers[0].value);
               var str = $$('#tujuan').val().substring(0, 4);
               updateList(str);
@@ -154,16 +152,16 @@ routes = [
           });
         }
 
-        $$('#tujuan').on('keypress', function(evt){ //only numbers
+        // $$('#tujuan').on('keypress', function(evt){ //only numbers
           
-          evt = (evt) ? evt : window.event;
-          var charCode = (evt.which) ? evt.which : evt.keyCode;
-          if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-              evt.preventDefault();
-              return false;
-          }
-          return true;
-        });
+        //   evt = (evt) ? evt : window.event;
+        //   var charCode = (evt.which) ? evt.which : evt.keyCode;
+        //   if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        //       evt.preventDefault();
+        //       return false;
+        //   }
+        //   return true;
+        // });
         
         $$('#tujuan').on('input', function(){
           
@@ -181,13 +179,14 @@ routes = [
      
           navigator.contacts.pickContact(function(contact){
               //console.log('The following contact has been selected:' + JSON.stringify(contact));
-              var nomor = contact.phoneNumbers[0].value.replace('+62', '0');
-              $$('#tujuan').val(nomor);
+              //var nomor = contact.phoneNumbers[0].value.replace('+62', '0');
+              $$('#tujuan').val(contact.phoneNumbers[0].value);
               var str = $$('#tujuan').val().substring(0, 4);
               updateList(str);
           },function(err){
               //console.log('Error: ' + err);
-              alert('Error: ' + err);
+              // alert('Error: ' + err);
+              $$('#tujuan').val('');
           });
         });
       
@@ -251,24 +250,25 @@ routes = [
      
           navigator.contacts.pickContact(function(contact){
               //console.log('The following contact has been selected:' + JSON.stringify(contact));
-              var nomor = contact.phoneNumbers[0].value.replace('+62', '0');
-              $$('#tujuan').val(nomor);
+              // var nomor = contact.phoneNumbers[0].value.replace('+62', '0');
+              $$('#tujuan').val(contact.phoneNumbers[0].value);
           },function(err){
               //console.log('Error: ' + err);
-              alert('Error: ' + err);
+              // alert('Error: ' + err);
+              $$('#tujuan').val('');
           });
         });
       
-        $$('#tujuan').on('keypress', function(evt){ //only numbers
+        // $$('#tujuan').on('keypress', function(evt){ //only numbers
           
-          evt = (evt) ? evt : window.event;
-          var charCode = (evt.which) ? evt.which : evt.keyCode;
-          if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-              evt.preventDefault();
-              return false;
-          }
-          return true;
-        });
+        //   evt = (evt) ? evt : window.event;
+        //   var charCode = (evt.which) ? evt.which : evt.keyCode;
+        //   if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        //       evt.preventDefault();
+        //       return false;
+        //   }
+        //   return true;
+        // });
         
         $$('.btnKirim').on('click', function(e){
           //e.preventDefault();
@@ -355,16 +355,16 @@ routes = [
           });
         }
 
-        $$('#tujuan').on('keypress', function(evt){ //only numbers
+        // $$('#tujuan').on('keypress', function(evt){ //only numbers
           
-          evt = (evt) ? evt : window.event;
-          var charCode = (evt.which) ? evt.which : evt.keyCode;
-          if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-              evt.preventDefault();
-              return false;
-          }
-          return true;
-        });
+        //   evt = (evt) ? evt : window.event;
+        //   var charCode = (evt.which) ? evt.which : evt.keyCode;
+        //   if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        //       evt.preventDefault();
+        //       return false;
+        //   }
+        //   return true;
+        // });
         
         $$('#tujuan').on('input', function(){
           
@@ -382,13 +382,14 @@ routes = [
      
           navigator.contacts.pickContact(function(contact){
               //console.log('The following contact has been selected:' + JSON.stringify(contact));
-              var nomor = contact.phoneNumbers[0].value.replace('+62', '0');
-              $$('#tujuan').val(nomor);
+              // var nomor = contact.phoneNumbers[0].value.replace('+62', '0');
+              $$('#tujuan').val(contact.phoneNumbers[0].value);
               var str = $$('#tujuan').val().substring(0, 4);
               updateList(str);
           },function(err){
               //console.log('Error: ' + err);
-              alert('Error: ' + err);
+              // alert('Error: ' + err);
+              $$('#tujuan').val('');
           });
         });
       
@@ -465,16 +466,16 @@ routes = [
           });
         }
 
-        $$('#tujuan').on('keypress', function(evt){ //only numbers
+        // $$('#tujuan').on('keypress', function(evt){ //only numbers
           
-          evt = (evt) ? evt : window.event;
-          var charCode = (evt.which) ? evt.which : evt.keyCode;
-          if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-              evt.preventDefault();
-              return false;
-          }
-          return true;
-        });
+        //   evt = (evt) ? evt : window.event;
+        //   var charCode = (evt.which) ? evt.which : evt.keyCode;
+        //   if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        //       evt.preventDefault();
+        //       return false;
+        //   }
+        //   return true;
+        // });
         
         $$('#tujuan').on('input', function(){
           
@@ -492,13 +493,14 @@ routes = [
      
           navigator.contacts.pickContact(function(contact){
               //console.log('The following contact has been selected:' + JSON.stringify(contact));
-              var nomor = contact.phoneNumbers[0].value.replace('+62', '0');
-              $$('#tujuan').val(nomor);
+              // var nomor = contact.phoneNumbers[0].value.replace('+62', '0');
+              $$('#tujuan').val(contact.phoneNumbers[0].value);
               var str = $$('#tujuan').val().substring(0, 4);
               updateList(str);
           },function(err){
               //console.log('Error: ' + err);
-              alert('Error: ' + err);
+              // alert('Error: ' + err);
+              $$('#tujuan').val('');
           });
         });
       
@@ -590,24 +592,24 @@ routes = [
      
           navigator.contacts.pickContact(function(contact){
               //console.log('The following contact has been selected:' + JSON.stringify(contact));
-              var nomor = contact.phoneNumbers[0].value.replace('+62', '0');
-              $$('#tujuan').val(nomor);
+              $$('#tujuan').val(contact.phoneNumbers[0].value);
               },function(err){
                   //console.log('Error: ' + err);
-                  alert('Error: ' + err);
+                  // alert('Error: ' + err);
+                  $$('#tujuan').val('');
               });
         });
       
-        $$('#tujuan').on('keypress', function(evt){ //only numbers
+        // $$('#tujuan').on('keypress', function(evt){ //only numbers
           
-          evt = (evt) ? evt : window.event;
-          var charCode = (evt.which) ? evt.which : evt.keyCode;
-          if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-              evt.preventDefault();
-              return false;
-          }
-          return true;
-        });
+        //   evt = (evt) ? evt : window.event;
+        //   var charCode = (evt.which) ? evt.which : evt.keyCode;
+        //   if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        //       evt.preventDefault();
+        //       return false;
+        //   }
+        //   return true;
+        // });
         
         $$('.btnKirim').on('click', function(e){
           //e.preventDefault();
