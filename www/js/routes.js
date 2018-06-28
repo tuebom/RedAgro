@@ -43,7 +43,7 @@ routes = [
           });
         }
 
-        $$('#tujuan').on('keypress', function(evt){ //only numbers
+        $$('#tujuan').on('keydown', function(evt){ //only numbers
           
           evt = (evt) ? evt : window.event;
           var charCode = (evt.which) ? evt.which : evt.keyCode;
@@ -51,7 +51,7 @@ routes = [
               evt.preventDefault();
               return false;
           }
-          return true;
+          //return true;
         });
         
         $$('#tujuan').on('input', function(){
@@ -156,6 +156,17 @@ routes = [
           });
         }
 
+        $$('#tujuan').on('keydown', function(evt){ //only numbers
+          
+          evt = (evt) ? evt : window.event;
+          var charCode = (evt.which) ? evt.which : evt.keyCode;
+          if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+              evt.preventDefault();
+              return false;
+          }
+          //return true;
+        });
+
         $$('#tujuan').on('input', function(){
           
           var str = $$('#tujuan').val();
@@ -172,8 +183,8 @@ routes = [
      
           navigator.contacts.pickContact(function(contact){
               //console.log('The following contact has been selected:' + JSON.stringify(contact));
-              //var nomor = contact.phoneNumbers[0].value.replace('+62', '0');
-              $$('#tujuan').val(contact.phoneNumbers[0].value);
+              var nomor = contact.phoneNumbers[0].value;
+              $$('#tujuan').val(nomor.replace('+62','0'));
               var str = $$('#tujuan').val().substring(0, 4);
               updateList(str);
           },function(err){
@@ -235,6 +246,17 @@ routes = [
     url: './pages/token.html',
     on: {
       pageInit: function (event, page) {
+        
+        $$('#tujuan').on('keydown', function(evt){ //only numbers
+          
+          evt = (evt) ? evt : window.event;
+          var charCode = (evt.which) ? evt.which : evt.keyCode;
+          if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+              evt.preventDefault();
+              return false;
+          }
+          //return true;
+        });
         
         $$('.contact').on('click', function(e){
      
@@ -330,6 +352,17 @@ routes = [
           });
         }
 
+        $$('#tujuan').on('keydown', function(evt){ //only numbers
+          
+          evt = (evt) ? evt : window.event;
+          var charCode = (evt.which) ? evt.which : evt.keyCode;
+          if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+              evt.preventDefault();
+              return false;
+          }
+          //return true;
+        });
+        
         $$('#tujuan').on('input', function(){
           
           var str = $$('#tujuan').val();
@@ -346,8 +379,8 @@ routes = [
      
           navigator.contacts.pickContact(function(contact){
               //console.log('The following contact has been selected:' + JSON.stringify(contact));
-              // var nomor = contact.phoneNumbers[0].value.replace('+62', '0');
-              $$('#tujuan').val(contact.phoneNumbers[0].value);
+              var nomor = contact.phoneNumbers[0].value;
+              $$('#tujuan').val(nomor.replace('+62','0'));
               var str = $$('#tujuan').val().substring(0, 4);
               updateList(str);
           },function(err){
@@ -426,6 +459,18 @@ routes = [
     
           });
         }
+        
+        $$('#tujuan').on('keydown', function(evt){ //only numbers
+          
+          evt = (evt) ? evt : window.event;
+          var charCode = (evt.which) ? evt.which : evt.keyCode;
+          if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+              evt.preventDefault();
+              return false;
+          }
+          //return true;
+        });
+        
 
         $$('#tujuan').on('input', function(){
           
@@ -443,8 +488,8 @@ routes = [
      
           navigator.contacts.pickContact(function(contact){
               //console.log('The following contact has been selected:' + JSON.stringify(contact));
-              // var nomor = contact.phoneNumbers[0].value.replace('+62', '0');
-              $$('#tujuan').val(contact.phoneNumbers[0].value);
+              var nomor = contact.phoneNumbers[0].value;
+              $$('#tujuan').val(nomor.replace('+62','0'));
               var str = $$('#tujuan').val().substring(0, 4);
               updateList(str);
           },function(err){
@@ -528,6 +573,17 @@ routes = [
           });
         }
         
+        $$('#tujuan').on('keydown', function(evt){ //only numbers
+          
+          evt = (evt) ? evt : window.event;
+          var charCode = (evt.which) ? evt.which : evt.keyCode;
+          if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+              evt.preventDefault();
+              return false;
+          }
+          //return true;
+        });
+                
         $$('#paket').on('change', function(e){
           var opr = $$(this).val();
           updateList(opr);
@@ -539,7 +595,8 @@ routes = [
      
           navigator.contacts.pickContact(function(contact){
               //console.log('The following contact has been selected:' + JSON.stringify(contact));
-              $$('#tujuan').val(contact.phoneNumbers[0].value);
+              var nomor = contact.phoneNumbers[0].value;
+              $$('#tujuan').val(nomor.replace('+62','0'));
               },function(err){
                   //console.log('Error: ' + err);
                   // alert('Error: ' + err);
