@@ -43,11 +43,13 @@ routes = [
           });
         }
 
-        $$('#tujuan').on('keydown', function(evt){ //only numbers
+        $$('input[type="text"]').on('keydown', function(evt){ //only numbers #tujuan
           
           evt = (evt) ? evt : window.event;
           var charCode = (evt.which) ? evt.which : evt.keyCode;
           if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+              // console.log(charCode);
+              app.dialog.alert(charCode);
               evt.preventDefault();
               return false;
           }
@@ -262,7 +264,8 @@ routes = [
      
           navigator.contacts.pickContact(function(contact){
               //console.log('The following contact has been selected:' + JSON.stringify(contact));
-              $$('#tujuan').val(contact.phoneNumbers[0].value);
+              var nomor = contact.phoneNumbers[0].value;
+              $$('#tujuan').val(nomor.replace('+62','0'));
           },function(err){
               //console.log('Error: ' + err);
               // alert('Error: ' + err);

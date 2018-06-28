@@ -86,35 +86,35 @@ var app  = new Framework7({
       $$('#my-login-screen [name="mbrid"]').val(localStorage.getItem('mbrid'));
       $$('#my-login-screen [name="nohp"]').val(localStorage.getItem('nohp'));
       
-      this.data.push = PushNotification.init({
-        "android": {
-            "senderID": "857182253756" //"597497239727"
-        },
-        "ios": {
-            "sound": true,
-            "vibration": true,
-            "badge": true
-        },
-        "windows": {}
-      });
+      // this.data.push = PushNotification.init({
+        // "android": {
+            // "senderID": "857182253756" //"597497239727"
+        // },
+        // "ios": {
+            // "sound": true,
+            // "vibration": true,
+            // "badge": true
+        // },
+        // "windows": {}
+      // });
 
-      var push = this.data.push;
+      // var push = this.data.push;
 
-      push.on('registration', function(data) {
+      // push.on('registration', function(data) {
 
-        var oldRegId = localStorage.getItem('RegId');
-        if (oldRegId !== data.registrationId) {
-            // Save new registration ID
-            localStorage.setItem('RegId', data.registrationId);
-            // Post registrationId to your app server as the value has changed
-            // app.dialog.alert('Registrasi Id berhasil!');
-        }
+        // var oldRegId = localStorage.getItem('RegId');
+        // if (oldRegId !== data.registrationId) {
+            // // Save new registration ID
+            // localStorage.setItem('RegId', data.registrationId);
+            // // Post registrationId to your app server as the value has changed
+            // // app.dialog.alert('Registrasi Id berhasil!');
+        // }
 
-      });
+      // });
 
-      push.on('notification', function(data) {
-        app.dialog.alert(data.message, 'RedAgro');
-      });
+      // push.on('notification', function(data) {
+        // app.dialog.alert(data.message, 'RedAgro');
+      // });
     },     
   },
   // App routes
@@ -224,7 +224,6 @@ $$('#my-login-screen .login-button').on('click', function () {
     
         if (data.status) {
           $$('.saldo').text(parseInt(data.saldo).toLocaleString());
-          console.log(parseInt(data.saldo).toLocaleString())
           app.data.saldo = parseInt(data.saldo);
         } else {
           app.dialog.alert(data.message, 'Akun Saya');
