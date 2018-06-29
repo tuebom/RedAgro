@@ -42,18 +42,28 @@ routes = [
     
           });
         }
+        
+        function getKeyCode(str) {
+            return str.charCodeAt(str.length);
+        }
 
-        $$('input[type="text"]').on('keydown', function(evt){ //only numbers #tujuan
+        $$('#tujuan').on('keydown', function(evt){ //only numbers 
           
           evt = (evt) ? evt : window.event;
           var charCode = (evt.which) ? evt.which : evt.keyCode;
-          if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-              // console.log(charCode);
-              app.dialog.alert(charCode);
-              evt.preventDefault();
-              return false;
+          
+          if (charCode == 229) {
+            var inputValue = this.value;
+            charCode = getKeyCode(inputValue);
+            
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                // console.log(charCode);
+                // app.dialog.alert(charCode);
+                evt.preventDefault();
+                return false;
+            }
           }
-          //return true;
+          return true;
         });
         
         $$('#tujuan').on('input', function(){
@@ -157,16 +167,28 @@ routes = [
             }
           });
         }
+        
+        function getKeyCode(str) {
+            return str.charCodeAt(str.length);
+        }
 
         $$('#tujuan').on('keydown', function(evt){ //only numbers
           
           evt = (evt) ? evt : window.event;
           var charCode = (evt.which) ? evt.which : evt.keyCode;
-          if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-              evt.preventDefault();
-              return false;
+          
+          if (charCode == 229) {
+            var inputValue = this.value;
+            charCode = getKeyCode(inputValue);
+            
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                // console.log(charCode);
+                // app.dialog.alert(charCode);
+                evt.preventDefault();
+                return false;
+            }
           }
-          //return true;
+          return true;
         });
 
         $$('#tujuan').on('input', function(){
@@ -249,15 +271,27 @@ routes = [
     on: {
       pageInit: function (event, page) {
         
+        function getKeyCode(str) {
+            return str.charCodeAt(str.length);
+        }
+
         $$('#tujuan').on('keydown', function(evt){ //only numbers
           
           evt = (evt) ? evt : window.event;
           var charCode = (evt.which) ? evt.which : evt.keyCode;
-          if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-              evt.preventDefault();
-              return false;
+          
+          if (charCode == 229) {
+            var inputValue = this.value;
+            charCode = getKeyCode(inputValue);
+            
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                // console.log(charCode);
+                // app.dialog.alert(charCode);
+                evt.preventDefault();
+                return false;
+            }
           }
-          //return true;
+          return true;
         });
         
         $$('.contact').on('click', function(e){
@@ -355,15 +389,27 @@ routes = [
           });
         }
 
+        function getKeyCode(str) {
+            return str.charCodeAt(str.length);
+        }
+
         $$('#tujuan').on('keydown', function(evt){ //only numbers
           
           evt = (evt) ? evt : window.event;
           var charCode = (evt.which) ? evt.which : evt.keyCode;
-          if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-              evt.preventDefault();
-              return false;
+          
+          if (charCode == 229) {
+            var inputValue = this.value;
+            charCode = getKeyCode(inputValue);
+            
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                // console.log(charCode);
+                // app.dialog.alert(charCode);
+                evt.preventDefault();
+                return false;
+            }
           }
-          //return true;
+          return true;
         });
         
         $$('#tujuan').on('input', function(){
@@ -463,15 +509,27 @@ routes = [
           });
         }
         
+        function getKeyCode(str) {
+            return str.charCodeAt(str.length);
+        }
+
         $$('#tujuan').on('keydown', function(evt){ //only numbers
           
           evt = (evt) ? evt : window.event;
           var charCode = (evt.which) ? evt.which : evt.keyCode;
-          if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-              evt.preventDefault();
-              return false;
+          
+          if (charCode == 229) {
+            var inputValue = this.value;
+            charCode = getKeyCode(inputValue);
+            
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                // console.log(charCode);
+                // app.dialog.alert(charCode);
+                evt.preventDefault();
+                return false;
+            }
           }
-          //return true;
+          return true;
         });
         
 
@@ -576,15 +634,27 @@ routes = [
           });
         }
         
+        function getKeyCode(str) {
+            return str.charCodeAt(str.length);
+        }
+
         $$('#tujuan').on('keydown', function(evt){ //only numbers
           
           evt = (evt) ? evt : window.event;
           var charCode = (evt.which) ? evt.which : evt.keyCode;
-          if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-              evt.preventDefault();
-              return false;
+          
+          if (charCode == 229) {
+            var inputValue = this.value;
+            charCode = getKeyCode(inputValue);
+            
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                // console.log(charCode);
+                // app.dialog.alert(charCode);
+                evt.preventDefault();
+                return false;
+            }
           }
-          //return true;
+          return true;
         });
                 
         $$('#paket').on('change', function(e){
