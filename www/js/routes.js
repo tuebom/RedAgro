@@ -95,7 +95,6 @@ routes = [
 
         $$('.contact').on('click', function(e){
      
-          app.dialog.alert('Yay!!!')
           navigator.contacts.pickContact(function(contact){
               //console.log('The following contact has been selected:' + JSON.stringify(contact));
               var nomor = contact.phoneNumbers[0].value;
