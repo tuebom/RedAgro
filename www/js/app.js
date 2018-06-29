@@ -1,6 +1,8 @@
 // Dom7
 var $$ = Dom7;
 
+Framework7.use(Framework7Keypad);
+
 // Framework7 App main instance
 var app  = new Framework7({
   root: '#app', // App root element

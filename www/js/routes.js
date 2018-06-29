@@ -32,6 +32,21 @@ routes = [
     on: {
       pageInit: function (event, page) {
         
+        var numpad = app.keypad.create({
+          inputEl: '#tujuan',
+          dotButton: false,
+          valueMaxLength: 13,
+          on: {
+            change(keypad, value) {
+              // console.log(keypad, value);
+              value = value.toString();
+              if (value.length === 4) {
+                updateList(value);
+              }
+            }
+          }
+        }); 
+
         function updateList(hlr) {
           app.request.json('http://212.24.111.23/redagro/pulsa/'+hlr, function (json) {
 
@@ -43,43 +58,44 @@ routes = [
           });
         }
         
-        function getKeyCode(str) {
-            return str.charCodeAt(str.length);
-        }
+        // function getKeyCode(str) {
+        //     return str.charCodeAt(str.length);
+        // }
 
-        $$('#tujuan').on('keydown', function(evt){ //only numbers 
+        // $$('#tujuan').on('keydown', function(evt){ //only numbers 
           
-          evt = (evt) ? evt : window.event;
-          var charCode = (evt.which) ? evt.which : evt.keyCode;
+        //   evt = (evt) ? evt : window.event;
+        //   var charCode = (evt.which) ? evt.which : evt.keyCode;
           
-          if (charCode == 229) {
-            var inputValue = this.value;
-            charCode = getKeyCode(inputValue);
+        //   if (charCode == 229) {
+        //     var inputValue = this.value;
+        //     charCode = getKeyCode(inputValue);
             
-            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-                // console.log(charCode);
-                // app.dialog.alert(charCode);
-                evt.preventDefault();
-                return false;
-            }
-          }
-          return true;
-        });
+        //     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        //         // console.log(charCode);
+        //         // app.dialog.alert(charCode);
+        //         evt.preventDefault();
+        //         return false;
+        //     }
+        //   }
+        //   return true;
+        // });
         
-        $$('#tujuan').on('input', function(){
+        // $$('#tujuan').on('input', function(){
           
-          var str = $$('#tujuan').val();
+        //   var str = $$('#tujuan').val();
           
-          if (str.length < 4) {
-            $$('#nominal').html('');
-          } else
-          if (str.length == 4) {
-            updateList(str);
-          }
-        });
+        //   if (str.length < 4) {
+        //     $$('#nominal').html('');
+        //   } else
+        //   if (str.length == 4) {
+        //     updateList(str);
+        //   }
+        // });
 
         $$('.contact').on('click', function(e){
      
+          app.dialog.alert('Yay!!!')
           navigator.contacts.pickContact(function(contact){
               //console.log('The following contact has been selected:' + JSON.stringify(contact));
               var nomor = contact.phoneNumbers[0].value;
@@ -119,12 +135,6 @@ routes = [
             app.dialog.alert('Saldo anda tidak cukup untuk melakukan transaksi pengisian pulsa.', 'Pulsa HP');
             return;
           }
-
-          // var pin = $$('#pin').val();
-          // if (pin == '') {
-          //     app.dialog.alert('Masukkan nomor pin anda.', 'Pulsa HP');
-          //     return;
-          // }
           
           // app.preloader.show();
 
@@ -158,6 +168,21 @@ routes = [
     on: {
       pageInit: function (event, page) {
         
+        var numpad = app.keypad.create({
+          inputEl: '#tujuan',
+          dotButton: false,
+          valueMaxLength: 13,
+          on: {
+            change(keypad, value) {
+              // console.log(keypad, value);
+              value = value.toString();
+              if (value.length === 4) {
+                updateList(value);
+              }
+            }
+          }
+        }); 
+        
         function updateList(hlr) {
           app.request.json('http://212.24.111.23/redagro/data/'+hlr, function (json) {
 
@@ -167,41 +192,6 @@ routes = [
             }
           });
         }
-        
-        function getKeyCode(str) {
-            return str.charCodeAt(str.length);
-        }
-
-        $$('#tujuan').on('keydown', function(evt){ //only numbers
-          
-          evt = (evt) ? evt : window.event;
-          var charCode = (evt.which) ? evt.which : evt.keyCode;
-          
-          if (charCode == 229) {
-            var inputValue = this.value;
-            charCode = getKeyCode(inputValue);
-            
-            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-                // console.log(charCode);
-                // app.dialog.alert(charCode);
-                evt.preventDefault();
-                return false;
-            }
-          }
-          return true;
-        });
-
-        $$('#tujuan').on('input', function(){
-          
-          var str = $$('#tujuan').val();
-          
-          if (str.length < 4) {
-            $$('#paket').html('');
-          } else
-          if (str.length == 4) {
-            updateList(str);
-          }
-        });
         
         $$('.contact').on('click', function(e){
      
@@ -271,28 +261,17 @@ routes = [
     on: {
       pageInit: function (event, page) {
         
-        function getKeyCode(str) {
-            return str.charCodeAt(str.length);
-        }
-
-        $$('#tujuan').on('keydown', function(evt){ //only numbers
-          
-          evt = (evt) ? evt : window.event;
-          var charCode = (evt.which) ? evt.which : evt.keyCode;
-          
-          if (charCode == 229) {
-            var inputValue = this.value;
-            charCode = getKeyCode(inputValue);
-            
-            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-                // console.log(charCode);
-                // app.dialog.alert(charCode);
-                evt.preventDefault();
-                return false;
-            }
-          }
-          return true;
-        });
+        var numpad = app.keypad.create({
+          inputEl: '#nopel',
+          dotButton: false,
+          valueMaxLength: 11,
+        }); 
+        
+        var numpad2 = app.keypad.create({
+          inputEl: '#tujuan',
+          dotButton: false,
+          valueMaxLength: 13,
+        }); 
         
         $$('.contact').on('click', function(e){
      
@@ -378,6 +357,21 @@ routes = [
     on: {
       pageInit: function (event, page) {
         
+        var numpad = app.keypad.create({
+          inputEl: '#tujuan',
+          dotButton: false,
+          valueMaxLength: 13,
+          on: {
+            change(keypad, value) {
+              // console.log(keypad, value);
+              value = value.toString();
+              if (value.length === 4) {
+                updateList(value);
+              }
+            }
+          }
+        }); 
+        
         function updateList(hlr) {
           app.request.json('http://212.24.111.23/redagro/telpon/'+hlr, function (json) {
 
@@ -388,41 +382,6 @@ routes = [
     
           });
         }
-
-        function getKeyCode(str) {
-            return str.charCodeAt(str.length);
-        }
-
-        $$('#tujuan').on('keydown', function(evt){ //only numbers
-          
-          evt = (evt) ? evt : window.event;
-          var charCode = (evt.which) ? evt.which : evt.keyCode;
-          
-          if (charCode == 229) {
-            var inputValue = this.value;
-            charCode = getKeyCode(inputValue);
-            
-            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-                // console.log(charCode);
-                // app.dialog.alert(charCode);
-                evt.preventDefault();
-                return false;
-            }
-          }
-          return true;
-        });
-        
-        $$('#tujuan').on('input', function(){
-          
-          var str = $$('#tujuan').val();
-          
-          if (str.length < 4) {
-            $$('#nominal').html('');
-          } else
-          if (str.length == 4) {
-            updateList(str);
-          }
-        });
 
         $$('.contact').on('click', function(e){
      
@@ -498,6 +457,21 @@ routes = [
     on: {
       pageInit: function (event, page) {
         
+        var numpad = app.keypad.create({
+          inputEl: '#tujuan',
+          dotButton: false,
+          valueMaxLength: 13,
+          on: {
+            change(keypad, value) {
+              // console.log(keypad, value);
+              value = value.toString();
+              if (value.length === 4) {
+                updateList(value);
+              }
+            }
+          }
+        }); 
+        
         function updateList(hlr) {
           app.request.json('http://212.24.111.23/redagro/sms/'+hlr, function (json) {
 
@@ -508,42 +482,6 @@ routes = [
     
           });
         }
-        
-        function getKeyCode(str) {
-            return str.charCodeAt(str.length);
-        }
-
-        $$('#tujuan').on('keydown', function(evt){ //only numbers
-          
-          evt = (evt) ? evt : window.event;
-          var charCode = (evt.which) ? evt.which : evt.keyCode;
-          
-          if (charCode == 229) {
-            var inputValue = this.value;
-            charCode = getKeyCode(inputValue);
-            
-            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-                // console.log(charCode);
-                // app.dialog.alert(charCode);
-                evt.preventDefault();
-                return false;
-            }
-          }
-          return true;
-        });
-        
-
-        $$('#tujuan').on('input', function(){
-          
-          var str = $$('#tujuan').val();
-          
-          if (str.length < 4) {
-            $$('#nominal').html('');
-          } else
-          if (str.length == 4) {
-            updateList(str);
-          }
-        });
 
         $$('.contact').on('click', function(e){
      
@@ -623,6 +561,12 @@ routes = [
     on: {
       pageInit: function (event, page) {
         
+        var numpad = app.keypad.create({
+          inputEl: '#tujuan',
+          dotButton: false,
+          valueMaxLength: 13,
+        }); 
+        
         function updateList(opr) {
           app.request.json('http://212.24.111.23/redagro/game/'+opr, function (json) {
 
@@ -633,29 +577,6 @@ routes = [
     
           });
         }
-        
-        function getKeyCode(str) {
-            return str.charCodeAt(str.length);
-        }
-
-        $$('#tujuan').on('keydown', function(evt){ //only numbers
-          
-          evt = (evt) ? evt : window.event;
-          var charCode = (evt.which) ? evt.which : evt.keyCode;
-          
-          if (charCode == 229) {
-            var inputValue = this.value;
-            charCode = getKeyCode(inputValue);
-            
-            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-                // console.log(charCode);
-                // app.dialog.alert(charCode);
-                evt.preventDefault();
-                return false;
-            }
-          }
-          return true;
-        });
                 
         $$('#paket').on('change', function(e){
           var opr = $$(this).val();
@@ -670,11 +591,11 @@ routes = [
               //console.log('The following contact has been selected:' + JSON.stringify(contact));
               var nomor = contact.phoneNumbers[0].value;
               $$('#tujuan').val(nomor.replace('+62','0'));
-              },function(err){
-                  //console.log('Error: ' + err);
-                  // alert('Error: ' + err);
-                  $$('#tujuan').val('');
-              });
+          },function(err){
+              //console.log('Error: ' + err);
+              // alert('Error: ' + err);
+              $$('#tujuan').val('');
+          });
         });
       
         $$('.btnKirim').on('click', function(e){
