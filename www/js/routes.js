@@ -14,7 +14,7 @@ routes = [
             var data = JSON.parse(res);
         
             if (data.status) {
-              $$('.saldo').text(parseInt(data.saldo).toLocaleString());
+              $$('.saldo').text(parseInt(data.saldo).toLocaleString('ID'));
               app.data.saldo = parseInt(data.saldo);
               app.data.bonus = parseInt(data.bonus);
             } else {
@@ -1106,13 +1106,13 @@ routes = [
           var data = JSON.parse(res);
         
           if (data.status) {
-            $$('#saldo').text(parseInt(data.saldo).toLocaleString());
+            $$('#saldo').text(parseInt(data.saldo).toLocaleString('ID'));
             app.data.saldo = parseInt(data.saldo);
 
-            $$('#poin').text(parseInt(data.poin).toLocaleString());
+            $$('#poin').text(parseInt(data.poin).toLocaleString('ID'));
             app.data.poin = parseInt(data.poin);
 
-            $$('#bonus').text(parseInt(data.bonus).toLocaleString());
+            $$('#bonus').text(parseInt(data.bonus).toLocaleString('ID'));
             app.data.bonus = parseInt(data.bonus);
 
           } else {
