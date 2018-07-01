@@ -123,7 +123,7 @@ var app  = new Framework7({
       //run admob
       if( /(android)/i.test(navigator.userAgent) ) {
         this.data.admobid = { // for Android
-          banner: 'ca-app-pub-1170231320150532/7569056964',
+          banner: 'ca-app-pub-1170231320150532~8681051983',
           interstitial: 'ca-app-pub-xxxxxxxxxxxxx/oooooooooooo'
         };
       } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
