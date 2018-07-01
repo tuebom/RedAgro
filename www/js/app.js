@@ -7,7 +7,7 @@ Framework7.use(Framework7Keypad);
 var app  = new Framework7({
   root: '#app', // App root element
   id: 'io.framework7.redagro', // App bundle ID
-  name: 'RedAgro', // App name
+  name: 'Redagro', // App name
   theme: 'auto', // Automatic theme detection
   init: true,
   initOnDeviceReady: true,
@@ -116,7 +116,7 @@ var app  = new Framework7({
       });
 
       push.on('notification', function(data) {
-        app.dialog.alert(data.message, 'RedAgro');
+        app.dialog.alert(data.message, 'Redagro');
       });
       
       
