@@ -145,7 +145,7 @@ var app  = new Framework7({
           adId: this.data.admobid.banner,
           adSize: 'SMART_BANNER',
           position: AdMob.AD_POSITION.BOTTOM_CENTER,
-          isTesting: true, // TODO: remove this line when release
+          // isTesting: true, // TODO: remove this line when release
           autoShow: false,
           overlap: false,
           // offsetTopBar: false,
