@@ -249,7 +249,7 @@ var ac_share = app.actions.create({
         })
       }
     },
-    {
+    /*{
       text: '<div class="list"><ul><li><div class="item-content">'+
       '<div class="item-media"><img class="material-icons" src="img/twitter.png" /></div>'+
       '<div class="item-inner">'+
@@ -266,7 +266,7 @@ var ac_share = app.actions.create({
           app.dialog.alert("Sharing failed with message: " + e, "Redagro");
         })
       }
-    },
+    },*/
     {
       text: '<div class="list"><ul><li><div class="item-content">'+
       '<div class="item-media"></div>'+
