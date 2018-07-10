@@ -41,10 +41,7 @@
   <!--<plugin name="cordova-plugin-camera" source="npm" />
   <plugin name="cordova-plugin-media-capture" spec="^6.3.0" />-->
   <plugin name="cordova-plugin-admobpro" source="npm" />
-  <!--<plugin name="cordova-plugin-email" source="npm" />
-  <plugin name="cordova-plugin-networking-bluetooth" source="npm" />-->
-  <!--<plugin name="cordova-plugin-x-socialsharing" source="npm" />-->
-  <plugin name="nl.x-services.plugins.socialsharing" spec="~4.3.16" />
+  <plugin name="cordova-plugin-x-socialsharing" source="npm" />
 
   <plugin name="cordova-plugin-console" source="npm" />
   <plugin name="cordova-plugin-contacts" spec="~2.3.1" /> <!-- cli-6.5.0 -->

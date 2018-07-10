@@ -211,26 +211,79 @@ var swiper = app.swiper.create('.swiper-container', {
 swiper.autoplay.start();
 
 
-$$('.ac-share').on('click', function () {
-  var options = {
-    message: 'Ayo dapatkan passive income lewat aplikasi ini!', // not supported on some apps (Facebook, Instagram)
-    subject: 'Aplikasi keren!', // fi. for email
-    files: ['', ''], // an array of filenames either locally or remotely
-    url: 'https://play.google.com/store/apps/details?id=com.app.redagro',
-    chooserTitle: 'Pilih aplikasi', // Android only, you can override the default share sheet title,
-    appPackageName: 'com.app.redagro' // Android only, you can provide id of the App you want to share with
-  };
-   
-  var onSuccess = function(result) {
-    // console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
-    // console.log("Shared to app: " + result.app); // On Android result.app since plugin version 5.4.0 this is no longer empty. On iOS it's empty when sharing is cancelled (result.completed=false)
-  };
-   
-  var onError = function(msg) {
-    app.dialog.alert("Sharing failed with message: " + msg, "Redagro");
-  };
+var ac_share = app.actions.create({
+  buttons: [
+    {
+      text: '<div class="list"><ul><li><div class="item-content">'+
+      '<div class="item-media"><img class="material-icons" src="img/whatsapp.png" /></div>'+
+      '<div class="item-inner">'+
+        '<div class="item-title-row">'+
+          '<div class="item-title">Whatsapp</div>'+
+        '</div>'+
+        '<div class="item-text"></div>'+
+      '</div>'+
+    '</div></li></ul></div>',
+      onClick: function () {
+        var msg = 'Ayo dapatkan passive income lewat aplikasi ini!' +
+        'https://play.google.com/store/apps/details?id=com.app.redagro';
+        window.plugins.socialsharing.shareViaWhatsApp(msg, null, null, null, function(e){
+          app.dialog.alert("Sharing failed with message: " + e, "Redagro");
+        })
+      }
+    },
+    {
+      text: '<div class="list"><ul><li><div class="item-content">'+
+      '<div class="item-media"><img class="material-icons" src="img/facebook.png" /></div>'+
+      '<div class="item-inner">'+
+        '<div class="item-title-row">'+
+          '<div class="item-title">Facebook</div>'+
+        '</div>'+
+        '<div class="item-text"></div>'+
+      '</div>'+
+    '</div></li></ul></div>',
+      onClick: function () {
+        var msg = 'Ayo dapatkan passive income lewat aplikasi ini!' +
+        'https://play.google.com/store/apps/details?id=com.app.redagro';
+        window.plugins.socialsharing.shareViaFacebook(msg, null, null, null, function(e){
+          app.dialog.alert("Sharing failed with message: " + e, "Redagro");
+        })
+      }
+    },
+    {
+      text: '<div class="list"><ul><li><div class="item-content">'+
+      '<div class="item-media"><img class="material-icons" src="img/twitter.png" /></div>'+
+      '<div class="item-inner">'+
+        '<div class="item-title-row">'+
+          '<div class="item-title">Twitter</div>'+
+        '</div>'+
+        '<div class="item-text"></div>'+
+      '</div>'+
+    '</div></li></ul></div>',
+      onClick: function () {
+        var msg = 'Ayo dapatkan passive income lewat aplikasi ini!' +
+        'https://play.google.com/store/apps/details?id=com.app.redagro';
+        window.plugins.socialsharing.shareViaTwitter(msg, null, 'https://twitter.com/', null, function(e){
+          app.dialog.alert("Sharing failed with message: " + e, "Redagro");
+        })
+      }
+    },
+    {
+      text: '<div class="list"><ul><li><div class="item-content">'+
+      '<div class="item-media"></div>'+
+      '<div class="item-inner">'+
+        '<div class="item-title-row">'+
+          '<div class="item-title">Cancel</div>'+
+        '</div>'+
+        '<div class="item-text"></div>'+
+      '</div>'+
+    '</div></li></ul></div>',
+      color: 'red',
+    },
+  ]
+});
 
-  window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
+$$('.ac-share').on('click', function () {
+  ac_share.open();
 });
 
 // Login Screen
