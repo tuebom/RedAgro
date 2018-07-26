@@ -83,12 +83,22 @@ routes = [
         
         $$('#tujuan').on('input', function(){
           
-          var str = $$('#tujuan').val();
+          var str = $$(this).val();
           
           if (str.length < 4) {
             $$('#nominal').html('');
           } else
           if (str.length == 4) {
+            updateList(str);
+          }
+        });
+        
+        $$('#tujuan').on('paste', function(){
+          
+          var str = $$(this).val();
+          
+          if (str.length > 4) {
+            var str = $$(this).val().substring(0, 4);
             updateList(str);
           }
         });
@@ -212,6 +222,16 @@ routes = [
             $$('#nominal').html('');
           } else
           if (str.length == 4) {
+            updateList(str);
+          }
+        });
+        
+        $$('#tujuan').on('paste', function(){
+          
+          var str = $$(this).val();
+          
+          if (str.length > 4) {
+            var str = $$(this).val().substring(0, 4);
             updateList(str);
           }
         });
@@ -441,6 +461,16 @@ routes = [
             updateList(str);
           }
         });
+        
+        $$('#tujuan').on('paste', function(){
+          
+          var str = $$(this).val();
+          
+          if (str.length > 4) {
+            var str = $$(this).val().substring(0, 4);
+            updateList(str);
+          }
+        });
 
         $$('.contact').on('click', function(e){
      
@@ -562,6 +592,16 @@ routes = [
             $$('#nominal').html('');
           } else
           if (str.length == 4) {
+            updateList(str);
+          }
+        });
+        
+        $$('#tujuan').on('paste', function(){
+          
+          var str = $$(this).val();
+          
+          if (str.length > 4) {
+            var str = $$(this).val().substring(0, 4);
             updateList(str);
           }
         });
