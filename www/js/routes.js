@@ -95,16 +95,6 @@ routes = [
             updateList(str);
           }
         });
-        
-        /*$$('input').on('paste', function(){
-          
-          var str = $$(this).val();
-          
-          if (str.length > 4) {
-            var str = $$(this).val().substring(0, 4);
-            updateList(str);
-          }
-        });*/
 
         $$('.contact').on('click', function(e){
      
@@ -231,16 +221,6 @@ routes = [
             updateList(str);
           }
         });
-        
-        /*$$('input').on('paste', function(){
-          
-          var str = $$(this).val();
-          
-          if (str.length > 4) {
-            var str = $$(this).val().substring(0, 4);
-            updateList(str);
-          }
-        });*/
         
         $$('.contact').on('click', function(e){
      
@@ -470,16 +450,6 @@ routes = [
             updateList(str);
           }
         });
-        
-        /*$$('input').on('paste', function(){
-          
-          var str = $$(this).val();
-          
-          if (str.length > 4) {
-            var str = $$(this).val().substring(0, 4);
-            updateList(str);
-          }
-        });*/
 
         $$('.contact').on('click', function(e){
      
@@ -607,16 +577,6 @@ routes = [
             updateList(str);
           }
         });
-        
-        /*$$('input').on('paste', function(){
-          
-          var str = $$(this).val();
-          
-          if (str.length > 4) {
-            var str = $$(this).val().substring(0, 4);
-            updateList(str);
-          }
-        });*/
 
         $$('.contact').on('click', function(e){
      
