@@ -93,7 +93,7 @@ routes = [
           }
         });
         
-        $$('#tujuan').on('change', function(){
+        $$('input').on('paste', function(){
           
           var str = $$(this).val();
           
@@ -226,7 +226,7 @@ routes = [
           }
         });
         
-        $$('#tujuan').on('change', function(){
+        $$('input').on('paste', function(){
           
           var str = $$(this).val();
           
@@ -462,7 +462,7 @@ routes = [
           }
         });
         
-        $$('#tujuan').on('change', function(){
+        $$('input').on('paste', function(){
           
           var str = $$(this).val();
           
@@ -596,7 +596,7 @@ routes = [
           }
         });
         
-        $$('#tujuan').on('change', function(){
+        $$('input').on('paste', function(){
           
           var str = $$(this).val();
           
