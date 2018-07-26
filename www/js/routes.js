@@ -90,10 +90,13 @@ routes = [
           } else
           if (str.length == 4) {
             updateList(str);
+          } else {
+            var str = $$(this).val().substring(0, 4);
+            updateList(str);
           }
         });
         
-        $$('input').on('paste', function(){
+        /*$$('input').on('paste', function(){
           
           var str = $$(this).val();
           
@@ -101,7 +104,7 @@ routes = [
             var str = $$(this).val().substring(0, 4);
             updateList(str);
           }
-        });
+        });*/
 
         $$('.contact').on('click', function(e){
      
@@ -223,10 +226,13 @@ routes = [
           } else
           if (str.length == 4) {
             updateList(str);
+          } else {
+            var str = $$(this).val().substring(0, 4);
+            updateList(str);
           }
         });
         
-        $$('input').on('paste', function(){
+        /*$$('input').on('paste', function(){
           
           var str = $$(this).val();
           
@@ -234,7 +240,7 @@ routes = [
             var str = $$(this).val().substring(0, 4);
             updateList(str);
           }
-        });
+        });*/
         
         $$('.contact').on('click', function(e){
      
@@ -459,10 +465,13 @@ routes = [
           } else
           if (str.length == 4) {
             updateList(str);
+          } else {
+            var str = $$(this).val().substring(0, 4);
+            updateList(str);
           }
         });
         
-        $$('input').on('paste', function(){
+        /*$$('input').on('paste', function(){
           
           var str = $$(this).val();
           
@@ -470,7 +479,7 @@ routes = [
             var str = $$(this).val().substring(0, 4);
             updateList(str);
           }
-        });
+        });*/
 
         $$('.contact').on('click', function(e){
      
@@ -593,10 +602,13 @@ routes = [
           } else
           if (str.length == 4) {
             updateList(str);
+          } else {
+            var str = $$(this).val().substring(0, 4);
+            updateList(str);
           }
         });
         
-        $$('input').on('paste', function(){
+        /*$$('input').on('paste', function(){
           
           var str = $$(this).val();
           
@@ -604,7 +616,7 @@ routes = [
             var str = $$(this).val().substring(0, 4);
             updateList(str);
           }
-        });
+        });*/
 
         $$('.contact').on('click', function(e){
      
