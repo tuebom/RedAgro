@@ -3,7 +3,6 @@ var $$ = Dom7;
 
 var AdMob = null;
 
-// localStorage.setItem('pin', '7715');
 // localStorage.setItem('lastOpened', new Date().getTime());
 // localStorage.setItem('RegId', 'eAqzZwYCbrk:APA91bFvOWcMy4NdUhtJpWH3alwDvshxMOj_QMQ0updhsZN5MiThYVBj_ZUChpMQV3IVnILXmwyyGmWoA4I-BUuPTTgv2NNLsqAlOAYGvaExW_8ZbLaWtGBzwGHSFcYFYizIUhijntPY');
 
@@ -61,7 +60,7 @@ var app  = new Framework7({
 
     init: function () { // sama dengan onDeviceReady
 
-      //*
+      /*
       function copyDatabaseFile(dbName) {
 
         var sourceFileName = cordova.file.applicationDirectory + 'www/' + dbName;
@@ -175,7 +174,7 @@ var app  = new Framework7({
         });
       }
     
-      //*
+      /*
       this.data.push = PushNotification.init({
         "android": {
             "senderID": "857182253756" //"597497239727"

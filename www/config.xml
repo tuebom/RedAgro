@@ -45,7 +45,7 @@
   <plugin name="cordova-plugin-x-socialsharing" source="npm" />
 
   <plugin name="cordova-plugin-console" source="npm" />
-  <plugin name="cordova-plugin-contacts" spec="~2.3.1" /> <!-- cli-6.5.0 -->
+  <plugin name="cordova-plugin-contacts" spec="~3.0.1" /> <!-- cli-7.1.0 -->
   <plugin name="cordova-plugin-device" source="npm" />
 
   <!-- android v4 -->
