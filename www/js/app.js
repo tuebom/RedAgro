@@ -14,7 +14,7 @@ var ca = new Date().getTime();
 
 var msec = ca - la;
 var mins = Math.floor(msec / 60000);
-var hrs = Math.floor(mins / 60);
+// var hrs = Math.floor(mins / 60);
 
 // console.log('hrs: ', hrs)
 
@@ -114,7 +114,7 @@ var app  = new Framework7({
         console.log(err);
       }); //*/
     
-      if (hrs > 8) {
+      if (mins > 5) {
 
         // jika lebih 8 jam, setup info login terakhir kali
         $$('#my-login-screen [name="mbrid"]').val(localStorage.getItem('mbrid'));
@@ -177,7 +177,7 @@ var app  = new Framework7({
       /*
       this.data.push = PushNotification.init({
         "android": {
-            "senderID": "857182253756" //"597497239727"
+            "senderID": "857182253756"
         },
         "ios": {
             "sound": true,
@@ -276,7 +276,7 @@ var swiper = app.swiper.create('.swiper-container', {
 swiper.autoplay.start();
 
 // cek selisih waktu, jika lebih tampilkan form login
-if (hrs > 8) {
+if (mins > 5) {
 
   var ls = app.loginScreen.create({ el: '#my-login-screen' });
   ls.open(false);
