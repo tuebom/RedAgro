@@ -36,8 +36,8 @@
   <preference name="phonegap-version"       value="cli-6.5.0" />
   <!--<preference name="android-build-tool" value="gradle" />-->
   
-  <plugin name="phonegap-plugin-push" spec="1.5.3" source="npm">
-      <variable name="SENDER_ID" value="857182253756" />
+  <plugin name="phonegap-plugin-push" spec="~2.1.2" source="npm">
+      <variable name="FCM_VERSION" value="11.0.1" />
   </plugin>
   <!--<plugin name="cordova-plugin-camera" source="npm" />
   <plugin name="cordova-plugin-media-capture" spec="^6.3.0" />
@@ -49,9 +49,10 @@
   <plugin name="cordova-plugin-device" source="npm" />
 
   <!-- android v4 -->
+  <!--
   <plugin name="cordova-plugin-crosswalk-webview" source="npm" spec="~2.4.0" />
   <plugin name="cordova-build-architecture" spec="https://github.com/MBuchalik/cordova-build-architecture.git#v1.0.4" source="git" />
-  <!-- -->
+  -->
   
   <plugin name="cordova-plugin-dialogs" source="npm" />
   <!--
@@ -69,6 +70,8 @@
   
   <!--<icon src="img/icon/icon.png"/>-->
   <platform name="android">
+  <allow-intent href="market:*" />
+  <resource-file src="google-services.json" target="app/google-services.json" />
   <icon src="res/icon/android/icon-36-ldpi.png" density="ldpi"/>
   <icon src="res/icon/android/icon-48-mdpi.png" density="mdpi"/>
   <icon src="res/icon/android/icon-72-hdpi.png" density="hdpi"/>
