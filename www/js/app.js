@@ -178,7 +178,6 @@ var app  = new Framework7({
       //*
       this.data.push = PushNotification.init({
         "android": {
-            "senderID": "857182253756" //"597497239727"
         },
         "ios": {
             "sound": true,
