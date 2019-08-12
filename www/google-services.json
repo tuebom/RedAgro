@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "857182253756",
+    "firebase_url": "https://redagro-155812.firebaseio.com",
+    "project_id": "redagro-155812",
+    "storage_bucket": "redagro-155812.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857182253756:android:18c517517c3ac32b",
+        "android_client_info": {
+          "package_name": "com.app.biz.redagro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "857182253756-0qi5f60iljnthr5lgs23vlqapj6am4h7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgP4Z62uBekOLkUNvPDXbLjKLJdbUMWuQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "857182253756-0qi5f60iljnthr5lgs23vlqapj6am4h7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
