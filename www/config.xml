@@ -37,7 +37,7 @@
   <preference name="phonegap-version"       value="cli-7.1.0" />
   <preference name="android-build-tool" value="gradle" />
   
-  <plugin name="phonegap-plugin-push" spec="~2.1.2" source="npm">
+  <plugin name="phonegap-plugin-push" spec="~2.2.0" source="npm">
       <variable name="FCM_VERSION" value="11.0.1" />
   </plugin>
   <!--<plugin name="cordova-plugin-camera" source="npm" />
@@ -72,7 +72,7 @@
   <!--<icon src="img/icon/icon.png"/>-->
   <platform name="android">
   <allow-intent href="market:*" />
-  <resource-file src="google-services.json" target="google-services.json" />
+  <resource-file src="google-services.json" target="app/google-services.json" />
   <icon src="res/icon/android/icon-36-ldpi.png" density="ldpi"/>
   <icon src="res/icon/android/icon-48-mdpi.png" density="mdpi"/>
   <icon src="res/icon/android/icon-72-hdpi.png" density="hdpi"/>
