@@ -175,7 +175,7 @@ var app  = new Framework7({
         });
       }
     
-      //*
+      /*
       this.data.push = PushNotification.init({
         "android": {
         },
