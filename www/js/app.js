@@ -61,7 +61,7 @@ var app  = new Framework7({
 
     init: function () { // sama dengan onDeviceReady
 
-      //*
+      /*
       function copyDatabaseFile(dbName) {
 
         var sourceFileName = cordova.file.applicationDirectory + 'www/' + dbName;
@@ -175,7 +175,7 @@ var app  = new Framework7({
         });
       }
     
-      /*
+      //*
       this.data.push = PushNotification.init({
         "android": {
         },
