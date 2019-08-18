@@ -203,7 +203,7 @@ var app  = new Framework7({
 
       push.on('notification', function(data) {
         
-        var db = app.data.db;
+        /*var db = app.data.db;
     
         if (db) {
           
@@ -218,7 +218,7 @@ var app  = new Framework7({
                 app.dialog.alert('insert error: ' + error.message);
               });
           });
-        }
+        } */
       
         // show message
         app.dialog.alert(data.message, 'Redagro');
